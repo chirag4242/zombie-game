@@ -1,2 +1,9 @@
+# setup info
+SIZE_OF_TILE = 64 
 WIDTH_OF_WINDOW = 1280
 HEIGHT_OF_WINDOW = 720
+ANIMATION_SPEED = 8
+
+
+# colors 
+LINE_COLOR = 'black'
