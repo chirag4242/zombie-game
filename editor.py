@@ -19,6 +19,9 @@ class Editor:
         self.support_line_surface.set_colorkey('green')
         self.support_line_surface.set_alpha(30)
 
+        # selection 
+        self.selection_index = 2 
+    
     # input
     def event_loop(self):  
             for event in pygame.event.get():
@@ -26,7 +29,15 @@ class Editor:
                     pygame.quit()
                     sys.exit()
                 self.pan_input(event)
-     
+    
+    def selection_hotkeys(self,event):
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_LEFT:
+                self.selection_index -= 1
+            if event.key == pygame.K_RIGHT:
+                self.selection_index += 1
+            self.selection_index = max(2,min(self.selection_index,18))
+
     def pan_input(self,event):
         # mouse_inputs is alias of pygame.mouse.mouse_inputs
         if event.type == pygame.MOUSEBUTTONDOWN and mouse_inputs()[1]:
