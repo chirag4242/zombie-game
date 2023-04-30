@@ -3,6 +3,8 @@ from pygame.math import Vector2 as vector
 from pygame.mouse import get_pressed as mouse_inputs
 from pygame.mouse import get_pos as mouse_position 
 from settings import *
+from menu import Menu
+
 
 class Editor: 
     def __init__(self):
@@ -21,6 +23,10 @@ class Editor:
 
         # selection 
         self.selection_index = 2 
+
+        # menu 
+        self.menu = Menu()
+        self.menu.display() 
     
     # input
     def event_loop(self):  
